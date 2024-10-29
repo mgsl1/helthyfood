@@ -34,6 +34,7 @@
             <li><a href="#">اراء الزبائن</a></li>
             <li><a href="#">خدماتنا</a></li>
          </ul>
+         <div class="hamburger" onclick="toggleMenu()">☰</div>
          </div>
       </nav>
     <div class="hero-text-box">
@@ -73,8 +74,15 @@
      </div>
    </section>
 
-
+   /*jafa scripte*/  
    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script>
+   function toggleMenu() {
+     const nav = document.querySelector('.main-nav');
+     nav.classList.toggle('active');
+   }
+ </script>
+ /* ------------------------------*/
 </body>
 </html>

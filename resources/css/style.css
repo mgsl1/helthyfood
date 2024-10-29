@@ -196,13 +196,14 @@ header{
   }
 
   .main-nav li {
-    display: inline-block; /* عرض العناصر بشكل أفقي */
+    display: block; /* عرض العناصر بشكل أفقي */
     margin: 5px 10px; /* تباعد بين العناصر */
     border-bottom: 2px solid transparent; /* تحديد خط سفلي بعرض صغير */
   }
 
   .main-nav li a {
-    font-size: 85%; /* تصغير حجم النص */
+    font-size: 85%;
+    display: block; /* تصغير حجم النص */
   }
 
   /* تحديد عرض الخطوط السفلية أسفل الكلمات */
@@ -302,5 +303,62 @@ header{
 
   .main-nav li a {
     font-size: 100%;
+  }
+}
+/* إخفاء القائمة المنسدلة وأيقونة الهامبرغر على الشاشات الكبيرة */
+.hamburger {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+  color: #555;
+}
+
+/* جعل القائمة مخفية افتراضيًا على الهواتف */
+.main-nav {
+  display: flex;
+}
+
+/* تنسيقات لشاشات الهواتف */
+@media (max-width: 767px) {
+  /* إظهار أيقونة الهامبرغر على الشاشات الصغيرة */
+  .hamburger {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  /* إخفاء القائمة افتراضيًا في شاشات الهواتف */
+  .main-nav {
+    display: none;
+    position: absolute;
+    top: 60px; /* أسفل الأيقونة */
+    right: 20px;
+    background-color: #fff;
+    width: 200px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    list-style: none;
+    padding: 10px;
+    text-align: right;
+  }
+
+  /* إظهار القائمة عند التفعيل */
+  .main-nav.active {
+    display: block;
+  }
+
+  .main-nav li {
+    margin: 10px 0;
+  }
+
+  .main-nav li a {
+    font-size: 100%;
+    color: #555;
+    text-decoration: none;
+  }
+
+  .main-nav li a:hover {
+    color: #10ac84;
   }
 }
